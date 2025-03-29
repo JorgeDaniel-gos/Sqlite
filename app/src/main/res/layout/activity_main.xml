@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:background="#f7f7f7">
+
+        <!-- Título del formulario -->
+        <TextView
+            android:id="@+id/label_titulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Formulario de Usuario"
+            android:textSize="20sp"
+            android:textColor="#2C3E50"
+            android:layout_marginBottom="20dp"
+            android:textStyle="bold" />
+
+        <!-- Etiqueta para el nombre -->
+        <TextView
+            android:id="@+id/label_nombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre"
+            android:textSize="16sp"
+            android:textColor="#34495E"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Campo de texto para ingresar el nombre -->
+        <EditText
+            android:id="@+id/input_nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:hint="Ingrese el nombre"
+            android:padding="14dp"
+            android:background="@drawable/rounded_edittext"
+            android:textColor="#2C3E50"
+            android:textSize="16sp"/>
+
+        <!-- Etiqueta para la edad -->
+        <TextView
+            android:id="@+id/label_edad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edad"
+            android:textSize="16sp"
+            android:textColor="#34495E"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Campo de texto para ingresar la edad -->
+        <EditText
+            android:id="@+id/input_edad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:hint="Ingrese la edad"
+            android:inputType="number"
+            android:padding="14dp"
+            android:background="@drawable/rounded_edittext"
+            android:textColor="#2C3E50"
+            android:textSize="16sp"/>
+
+        <!-- Etiqueta para el ID -->
+        <TextView
+            android:id="@+id/label_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID (Para actualizar/eliminar)"
+            android:textSize="16sp"
+            android:textColor="#34495E"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Campo de texto para ingresar el ID -->
+        <EditText
+            android:id="@+id/input_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:hint="Ingrese el ID"
+            android:inputType="number"
+            android:padding="14dp"
+            android:background="@drawable/rounded_edittext"
+            android:textColor="#2C3E50"
+            android:textSize="16sp"/>
+
+        <!-- Botones agrupados en un LinearLayout horizontal -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="16dp"
+            android:weightSum="3">
+
+            <!-- Botón guardar -->
+            <Button
+                android:id="@+id/btn_guardar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Guardar"
+                android:layout_margin="8dp"
+                android:background="@color/blue_light"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_gravity="center" />
+
+            <!-- Botón actualizar -->
+            <Button
+                android:id="@+id/btn_actualizar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Actualizar"
+                android:layout_margin="8dp"
+                android:background="@color/green_light"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_gravity="center" />
+
+            <!-- Botón eliminar -->
+            <Button
+                android:id="@+id/btn_eliminar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Eliminar"
+                android:layout_margin="8dp"
+                android:background="@color/red_light"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_gravity="center" />
+        </LinearLayout>
+
+        <!-- Botón mostrar usuarios (color épico) -->
+        <Button
+            android:id="@+id/btn_mostrar_usuarios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mostrar Usuarios"
+            android:layout_marginBottom="16dp"
+            android:layout_gravity="center"
+            android:background="@color/epic_button_color"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Texto de salida para mostrar el resultado -->
+        <TextView
+            android:id="@+id/output_resultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#34495E"
+            android:textSize="14sp"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- ScrollView para mostrar los usuarios -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:id="@+id/output_usuarios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#34495E"
+                android:textSize="14sp"
+                android:padding="12dp" />
+        </ScrollView>
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
